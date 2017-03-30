@@ -37,5 +37,3 @@ output: MMMCLX
 step 7: Program takes the modulus and repeats steps 3 and 4 for 1(I) and adds it to end result of step 4, step 5, and step 6.
 input: 3169
 output: MMMCLXIX.
-
-step 8: The program tacks a zero to the front of numbers less than 1,000.

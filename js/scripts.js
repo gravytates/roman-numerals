@@ -1,5 +1,5 @@
 // business logic
-// var
+
   // if number is between 1 and 3999 proceed/pass as input, else dont.
 var goodNum = function(input) {
   if ((input >= 1) && (input <= 3999)) {
@@ -49,7 +49,6 @@ var isBaseRoman = function(input) {
 }
 
 var isThousMore = function(input) {
-  // if (input >= 1000) {
   var Ms = ((input - (input % 1000)) / 1000);
   var remainderM = input % 1000;
   input = Ms;
@@ -62,12 +61,10 @@ var isThousMore = function(input) {
     } else if (input === 0){
       input = ""
     }
-  // }
     return isOneHundMore(input, remainderM);
 }
-// Pass the modulo into the next function
+
 var isOneHundMore = function(input, remainderC) {
-  // if (remainderC >= 100) {
   var Cs = ((remainderC - (remainderC % 100)) / 100);
   var remainderC = remainderC % 100;
   if (Cs === 1) {
@@ -90,11 +87,9 @@ var isOneHundMore = function(input, remainderC) {
     input = input + "CM"
   }
   return isTenMore(input, remainderC);
-  // }
 }
 
 var isTenMore = function(input, remainderX) {
-  // if (remainderX >= 10) {
   var Xs = ((remainderX - (remainderX % 10)) / 10);
   var remainderX = remainderX % 10;
   if (Xs === 1) {
@@ -117,14 +112,11 @@ var isTenMore = function(input, remainderX) {
     input = input + "XL"
   }
   return isOneMore(input, remainderX);
-  // }
 }
 
 var isOneMore = function(input, remainderI) {
-  // if (remainderI >= 1) {
   var Is = ((remainderI - (remainderI % 1)) / 1);
   var remainderI = remainderI % 1;
-  // input = Is
   if (Is === 1) {
     input = input + "I"
   } else if (Is === 2) {
@@ -145,20 +137,15 @@ var isOneMore = function(input, remainderI) {
     input = input + "IX"
   }
   return input;
-  // }
 }
 
-
 // ui logic
-
-
 $(document).ready(function(){
 
   $("form").submit(function(event) {
     event.preventDefault();
 
     var userInput = parseInt($("#userInput").val());
-
     var result = goodNum(userInput);
     $("#romResult").append(result);
     $("form").hide();
@@ -168,6 +155,4 @@ $(document).ready(function(){
   $("#reload").click(function(){
     location.reload();
   });
-
-
 });
