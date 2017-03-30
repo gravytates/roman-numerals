@@ -1,50 +1,10 @@
-// business logic
-
+// // business logic
   // if number is between 1 and 3999 proceed/pass as input, else dont.
 var goodNum = function(input) {
   if ((input >= 1) && (input <= 3999)) {
     return isThousMore(input);
   } else {
     alert("enter whole number between 1 and 3999");
-  }
-}
-
-  // take input and see if its one of the base roman values else proceed
-var isBaseRoman = function(input) {
-  if (input === 1) {
-  input = "I";
-  // alert(input);
-  return input;
-  }
-  if (input === 5) {
-  input = "V";
-  // alert(input);
-  return input;
-  }
-  if (input === 10) {
-  input = "X";
-  // alert(input);
-  return input;
-  }
-  if (input === 50) {
-  input = "L";
-  // alert(input);
-  return input;
-  }
-  if (input === 100) {
-  input = "C";
-  // alert(input);
-  return input;
-  }
-  if (input === 500) {
-  input = "D";
-  // alert(input);
-  return input;
-  }
-  if (input === 1000) {
-  input = "M";
-  // alert(input);
-  return input;
   }
 }
 
