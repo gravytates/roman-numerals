@@ -50,7 +50,6 @@ var isBaseRoman = function(input) {
 
 var isThousMore = function(input) {
   if (input >= 1000) {
-    debugger;
   var Ms = ((input - (input % 1000)) / 1000);
   var remainderM = input % 1000;
   input = Ms
@@ -62,7 +61,6 @@ var isThousMore = function(input) {
         input = "MMM"
     }
   }
-  console.log(remainderM)
     return isOneHundMore(input, remainderM);
 }
 
@@ -72,7 +70,7 @@ var isOneHundMore = function(input, remainderC) {
   if (remainderC >= 100 && remainderC < 1000) {
   var Cs = ((remainderC - (remainderC % 100)) / 100);
   var remainderC = remainderC % 100;
-
+    debugger;
   if (Cs === 1) {
     input = input + "C"
   } else if (Cs === 2) {
@@ -92,65 +90,68 @@ var isOneHundMore = function(input, remainderC) {
   } else if (Cs === 9) {
     input = input + "CM"
   }
-
   // isTenMore(input);
-  return input;
+  return isTenMore(input, remainderC);
   }
 }
-var isTenMore = function(input) {
-  if (input >= 10 && input < 100) {
-  var Xs = ((input - (input % 10)) / 10)
-  input = Xs
-  if (input === 1) {
-    input = "X"
-  } else if (input === 2) {
-    input = "XX"
-  } else if (input === 3) {
-    input = "XXX"
-  } else if (input === 4) {
-    input = "XL"
-  } else if (input === 5) {
-    input = "L"
-  } else if (input === 6) {
-    input = "LX"
-  } else if (input === 7) {
-    input = "LXX"
-  } else if (input === 8) {
-    input = "LXXX"
-  } else if (input === 9) {
-    input = "XL"
+
+
+
+
+var isTenMore = function(input, remainderX) {
+
+  if (remainderX >= 10 && remainderX < 100) {
+  var Xs = ((remainderX - (remainderX % 10)) / 10);
+  var remainderX = remainderX % 10;
+
+  if (Xs === 1) {
+    input = input + "X"
+  } else if (Xs === 2) {
+    input = input + "XX"
+  } else if (Xs === 3) {
+    input = input + "XXX"
+  } else if (Xs === 4) {
+    input = input + "XL"
+  } else if (Xs === 5) {
+    input = input + "L"
+  } else if (Xs === 6) {
+    input = input + "LX"
+  } else if (Xs === 7) {
+    input = input + "LXX"
+  } else if (Xs === 8) {
+    input = input + "LXXX"
+  } else if (Xs === 9) {
+    input = input + "XL"
   }
-  alert(input);
   // isOneHundMore(input);
-  return input + isOneHundMore(input);
+  return isOneMore(input, remainderX);
   }
 }
-var isOneMore = function(input) {
-  if (input >= 1 && input < 10) {
-  var Is = ((input - (input % 1)) / 1)
-  input = Is
-  if (input === 1) {
-    input = "I"
-  } else if (input === 2) {
-    input = "II"
-  } else if (input === 3) {
-    input = "III"
-  } else if (input === 4) {
-    input = "IV"
-  } else if (input === 5) {
-    input = "V"
-  } else if (input === 6) {
-    input = "VI"
-  } else if (input === 7) {
-    input = "VII"
-  } else if (input === 8) {
-    input = "VIII"
-  } else if (input === 9) {
-    input = "IX"
+var isOneMore = function(input, remainderI) {
+  if (remainderI >= 1 && remainderI < 10) {
+  var Is = ((remainderI - (remainderI % 1)) / 1);
+  var remainderI = remainderI % 1;
+  // input = Is
+  if (Is === 1) {
+    input = input + "I"
+  } else if (Is === 2) {
+    input = input + "II"
+  } else if (Is === 3) {
+    input = input + "III"
+  } else if (Is === 4) {
+    input = input + "IV"
+  } else if (Is === 5) {
+    input = input + "V"
+  } else if (Is === 6) {
+    input = input + "VI"
+  } else if (Is === 7) {
+    input = input + "VII"
+  } else if (Is === 8) {
+    input = input + "VIII"
+  } else if (Is === 9) {
+    input = input + "IX"
   }
-  alert(input);
-  isTenMore(input);
-  return input
+  return input;
   }
 }
 
