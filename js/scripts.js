@@ -49,28 +49,27 @@ var isBaseRoman = function(input) {
 }
 
 var isThousMore = function(input) {
-  if (input >= 1000) {
+  // if (input >= 1000) {
   var Ms = ((input - (input % 1000)) / 1000);
   var remainderM = input % 1000;
-  input = Ms
+  input = Ms;
     if (input === 1) {
       input = "M"
     } else if (input === 2){
         input = "MM"
     } else if (input ===3){
         input = "MMM"
+    } else if (input === 0){
+      input = ""
     }
-  }
+  // }
     return isOneHundMore(input, remainderM);
 }
-
 // Pass the modulo into the next function
-
 var isOneHundMore = function(input, remainderC) {
-  if (remainderC >= 100 && remainderC < 1000) {
+  // if (remainderC >= 100) {
   var Cs = ((remainderC - (remainderC % 100)) / 100);
   var remainderC = remainderC % 100;
-    debugger;
   if (Cs === 1) {
     input = input + "C"
   } else if (Cs === 2) {
@@ -90,20 +89,14 @@ var isOneHundMore = function(input, remainderC) {
   } else if (Cs === 9) {
     input = input + "CM"
   }
-  // isTenMore(input);
   return isTenMore(input, remainderC);
-  }
+  // }
 }
 
-
-
-
 var isTenMore = function(input, remainderX) {
-
-  if (remainderX >= 10 && remainderX < 100) {
+  // if (remainderX >= 10) {
   var Xs = ((remainderX - (remainderX % 10)) / 10);
   var remainderX = remainderX % 10;
-
   if (Xs === 1) {
     input = input + "X"
   } else if (Xs === 2) {
@@ -123,12 +116,12 @@ var isTenMore = function(input, remainderX) {
   } else if (Xs === 9) {
     input = input + "XL"
   }
-  // isOneHundMore(input);
   return isOneMore(input, remainderX);
-  }
+  // }
 }
+
 var isOneMore = function(input, remainderI) {
-  if (remainderI >= 1 && remainderI < 10) {
+  // if (remainderI >= 1) {
   var Is = ((remainderI - (remainderI % 1)) / 1);
   var remainderI = remainderI % 1;
   // input = Is
@@ -152,7 +145,7 @@ var isOneMore = function(input, remainderI) {
     input = input + "IX"
   }
   return input;
-  }
+  // }
 }
 
 

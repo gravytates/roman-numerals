@@ -38,11 +38,4 @@ step 7: Program takes the modulus and repeats steps 3 and 4 for 1(I) and adds it
 input: 3169
 output: MMMCLXIX.
 
-convert 1 - 3 with simple conversion to roman numerals.
-	example input: 2
-	example output: ii
-
-
-
-convert 4 to roman numeral with subtraction because base is smaller than top
-once you have three (3), go down to one symbol and add the next symbol up (4), then remove the previous symbol (5) .
+step 8: The program tacks a zero to the front of numbers less than 1,000.
